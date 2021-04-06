@@ -18,7 +18,25 @@
  */
 
 function removeKFromList(l, k) {
-  return l.filter((elem) => elem !== k);
+  let it = l;
+  while (it !== null && it.value === k) {
+    it = it.next;
+  }
+  const top = it;
+  let prev = it;
+  it = it.next;
+  while (it !== null) {
+    if (it.value === k) {
+      if (it.next !== null) {
+        prev.next = it.next;
+      } else {
+        prev.next = null;
+      }
+    }
+    it = it.next;
+    prev = prev.next;
+  }
+  return top;
 }
 
 module.exports = removeKFromList;
