@@ -18,7 +18,7 @@ function renameFiles(names) {
   for (let i = 0; i < names.length; i++) {
     if (names.indexOf(names[i]) < i) {
       let id = 1;
-      while (true) {
+      while (names) {
         const test = `${names[i]}(${id})`;
         if (names.indexOf(test) === -1 || names.indexOf(test) > i) {
           names1[i] = test;

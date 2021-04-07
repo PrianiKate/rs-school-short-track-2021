@@ -23,7 +23,7 @@ class Queue {
 
   enqueue(element) {
     const node = new ListNode(element);
-    console.log(node);
+    node.next = null;
     this.data.push(element);
     this.top++;
   }
